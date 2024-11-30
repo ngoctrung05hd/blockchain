@@ -1,0 +1,11 @@
+npm init
+npm install
+
+compile
+
+2_crypto_zombies.js 
+var CryptoZombies = artifacts.require("./CryptoZombies.sol");
+module.exports = function(deployer) {
+  deployer.deploy(CryptoZombies);
+};
+

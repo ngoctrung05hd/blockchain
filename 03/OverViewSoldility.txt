@@ -1,0 +1,44 @@
+require: kiểm tra điều kiện, nếu không thỏa mãn thì dừng
+
+emit: đẩy event lên blockchain
+
+mapping: giống map c++ 
+
+các kiểu (nói về nơi lưu trữ) tham số được truyền vào:
+    storage: mặc định được sử dụng, được ghi vào blockchain và phát sinh phí gas. Lưu trữ lâu dài
+    memory: được lưu trữ tạm thời, sau khi hàm được thực thi sẽ bị xóa, ít tốn gas hơn vì k lưu vào blockchain
+    calldata: giống như tham chiếu, nhưng dữ liệu không thể thay đổi khi truyền vào, gọi từ bên ngoài 
+    indexed: 
+
+function TenFunction(...) (public/private/internal/external) (Modifie) (view) returns (....) 
+
+modifier: kiểm tra điều kiện và gọi các hàm _
+
+public: có thể gọi từ mọi nơi 
+private: chỉ có thể gọi trong chính contract khai báo 
+internal: có thể gọi bên trong contract và các contract kể thừa
+external: chỉ có thể gọi từ bên ngoài, kế thừa cũng không thể gọi
+
+view: không tốn gas, không thay đổi thông tin trên blockchain mà chỉ đọc, lấy dữ liệu.
+pure: không tốn gas, không thay đổi thông tin trên blockchain, không đọc, sử dụng dữ liệu.
+
+array in memomry: phải được cố định, mảng thay đổi được độ lớn (giống push) có thể được phát triển trong tương lai.
+
+payable: function có phí. Nếu không được đánh dấu là payable mà cố gắng gửi phí thì sẽ bị từ chối transaction
+
+address payable: 
+
+address(this).balance: số dư đang còn trong contract 
+
+seller.transfer(msg.value): 
+
+SafeMath
+
+@title và @author thì đơn giản.
+
+@notice giải thích cho người dùng về chức năng của hợp đồng/hàm. @dev dùng để giải thích thêm chi tiết cho các nhà phát triển.
+
+@param và @return dùng để mô tả chức năng của từng tham số và giá trị trả về của hàm.
+
+Lưu ý rằng bạn không phải lúc nào cũng phải sử dụng tất cả các thẻ này cho mọi hàm — tất cả các thẻ đều là tùy chọn. Nhưng ít nhất, hãy để lại một ghi chú @dev giải thích chức năng của từng hàm.
+

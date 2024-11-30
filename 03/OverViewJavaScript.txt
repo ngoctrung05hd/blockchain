@@ -1,0 +1,5 @@
+send/call
+
+setInterval: lap lai ham theo 1 khoang thoi gian co dinh
+
+.then : 
