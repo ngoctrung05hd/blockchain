@@ -1,7 +1,7 @@
-const hre = require("hardhat");
+import { ethers } from "hardhat";
 
 async function main() {
-	const SplitwiseContract = await hre.ethers.getContractFactory("Splitwise");
+	const SplitwiseContract = await ethers.getContractFactory("Splitwise");
 	const splitwiseContract = await SplitwiseContract.deploy();
 	await splitwiseContract.deployed();
 	console.log(`Splitwise contract address: ${splitwiseContract.address}`);
